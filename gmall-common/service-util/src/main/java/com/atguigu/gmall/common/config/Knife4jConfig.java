@@ -1,8 +1,11 @@
 package com.atguigu.gmall.common.config;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -20,9 +23,11 @@ import java.util.List;
 /**
  * Swagger2配置信息
  */
-//@Configuration
-//@EnableSwagger2
-public class Swagger2Config {
+@Configuration
+@EnableSwagger2
+@EnableKnife4j
+@Import(BeanValidatorPluginsConfiguration.class)
+public class Knife4jConfig {
 
     @Bean
     public Docket webApiConfig(){
@@ -65,7 +70,6 @@ public class Swagger2Config {
 
     @Bean
     public Docket adminApiConfig(){
-
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("adminApi")
                 .apiInfo(adminApiInfo())
@@ -77,7 +81,6 @@ public class Swagger2Config {
     }
 
     private ApiInfo webApiInfo(){
-
         return new ApiInfoBuilder()
                 .title("网站-API文档")
                 .description("本文档描述了网站微服务接口定义")
@@ -95,6 +98,4 @@ public class Swagger2Config {
                 .contact(new Contact("Helen", "http://atguigu.com", "55317332@qq.com"))
                 .build();
     }
-
-
 }

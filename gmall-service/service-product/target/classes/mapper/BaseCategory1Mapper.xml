@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.gmall.product.mapper.BaseAttrInfoMapper">
+    <resultMap id="BaseAttrInfoMap" type="com.atguigu.gmall.model.product.BaseAttrInfo" autoMapping="true">
+        <id property="id" column="id"></id>
+        <collection property="attrValueList" ofType="com.atguigu.gmall.model.product.BaseAttrValue">
+            <id property="id" column="value_id"></id>
+            <result column="valueName" property="valueName"></result>
+        </collection>
+    </resultMap>
+    <select id="selectAttrInfoList" resultMap="BaseAttrInfoMap">
+        select bai.id id,bai.attr_name,bai.category_id, bai.category_level, bav.value_name valueName, bav.attr_id value_id
+        from base_attr_info bai
+        inner join base_attr_value bav on bai.id = bav.attr_id
+        <where>
+            <trim prefix="(" suffix=")">
+                <if test="category1Id!=null and category1Id!=''">
+                    category_id = #{category1Id} and category_level = 1
+                </if>
+                <if test="category2Id!=null and category2Id!=''">
+                    or category_id = #{category2Id} and category_level = 2
+                </if>
+                <if test="category3Id!=null and category3Id!=''">
+                    or category_id = #{category3Id} and category_level = 3
+                </if>
+            </trim>
+            and bai.is_deleted = 0 and bav.is_deleted = 0
+        </where>
+        order by bai.category_level asc , bav.attr_id asc
+    </select>
+
+
+</mapper>
