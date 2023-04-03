@@ -15,7 +15,7 @@ import java.util.List;
  * @Version 1.0
  */
 @Repository
-public interface BaseAttrInfoMapper extends BaseMapper<BaseAttrInfoMapper> {
+public interface BaseAttrInfoMapper extends BaseMapper<BaseAttrInfo> {
     List<BaseAttrInfo> selectAttrInfoList(@Param("category1Id") Long category1Id,
                                           @Param("category2Id") Long category2Id,
                                           @Param("category3Id") Long category3Id);

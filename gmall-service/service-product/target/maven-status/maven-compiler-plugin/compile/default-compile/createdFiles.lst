@@ -1,0 +1,14 @@
+com\atguigu\gmall\product\mapper\BaseCategory1Mapper.class
+com\atguigu\gmall\product\ProductApp.class
+com\atguigu\gmall\product\service\BaseAttrValueService.class
+com\atguigu\gmall\product\mapper\BaseCategory3Mapper.class
+com\atguigu\gmall\product\mapper\BaseCategory2Mapper.class
+com\atguigu\gmall\product\service\impl\BaseAttrValueServiceImpl.class
+com\atguigu\gmall\product\service\impl\BaseAttrInfoServiceImpl.class
+com\atguigu\gmall\product\service\ManagerCategroyService.class
+com\atguigu\gmall\product\controller\BaseCategroyApiController.class
+com\atguigu\gmall\product\mapper\BaseAttrValueMapper.class
+com\atguigu\gmall\product\service\BaseAttrInfoService.class
+com\atguigu\gmall\product\mapper\BaseAttrInfoMapper.class
+com\atguigu\gmall\product\service\impl\ManagerCategroyServiceImpl.class
+com\atguigu\gmall\product\controller\BaseAttrInfoController.class

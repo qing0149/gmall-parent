@@ -1,8 +1,8 @@
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\result\Result.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\IpUtil.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\execption\GmallException.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\HttpClientUtil.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\DateUtil.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\result\ResultCodeEnum.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\AuthContextHolder.java
-D:\code\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\MD5.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\HttpClientUtil.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\execption\GmallException.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\result\Result.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\MD5.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\result\ResultCodeEnum.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\IpUtil.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\AuthContextHolder.java
+C:\Users\30627\Desktop\day4_1\gmall-parent\gmall-common\common-util\src\main\java\com\atguigu\gmall\common\util\DateUtil.java

@@ -11,7 +11,7 @@
     <select id="selectAttrInfoList" resultMap="BaseAttrInfoMap">
         select bai.id id,bai.attr_name,bai.category_id, bai.category_level, bav.value_name valueName, bav.attr_id value_id
         from base_attr_info bai
-        inner join base_attr_value bav on bai.id = bav.attr_id
+        left join base_attr_value bav on bai.id = bav.attr_id
         <where>
             <trim prefix="(" suffix=")">
                 <if test="category1Id!=null and category1Id!=''">
@@ -24,7 +24,7 @@
                     or category_id = #{category3Id} and category_level = 3
                 </if>
             </trim>
-            and bai.is_deleted = 0 and bav.is_deleted = 0
+            and bai.is_deleted = 0
         </where>
         order by bai.category_level asc , bav.attr_id asc
     </select>

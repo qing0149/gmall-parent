@@ -25,32 +25,33 @@ import java.util.List;
 @Api(tags = "后台控制器")
 @RequestMapping("/admin/product")
 @RestController
-@CrossOrigin
+//@CrossOrigin
 public class BaseCategroyApiController {
     @Autowired
     private ManagerCategroyService managerCategroyService;
 
     @Autowired
     private BaseAttrInfoService baseAttrInfoService;
-    
+
     /**
-    * @Description: 获取一级分类数据
-    * @Param: 
-    * @return: 
-    * @Author: jq
-    */
+     * @Description: 获取一级分类数据
+     * @Param:
+     * @return:
+     * @Author: jq
+     */
     @ApiOperation(value = "获取一级分类数据")
     @GetMapping("/getCategory1")
     public Result<List<BaseCategory1>> getCategory1() {
         List<BaseCategory1> category1List = managerCategroyService.getCategory1();
         return Result.ok(category1List);
     }
+
     /**
-    * @Description: 获取二级分类数据
-    * @Param: 
-    * @return: 
-    * @Author: jq
-    */
+     * @Description: 获取二级分类数据
+     * @Param:
+     * @return:
+     * @Author: jq
+     */
 
     @ApiOperation(value = "获取二级分类数据")
     @GetMapping("getCategory2/{category1Id}")
@@ -58,12 +59,13 @@ public class BaseCategroyApiController {
         List<BaseCategory2> category2List = managerCategroyService.getCategory2(category1Id);
         return Result.ok(category2List);
     }
+
     /**
-    * @Description: 获取三级分类数据
-    * @Param: 
-    * @return: 
-    * @Author: jq
-    */
+     * @Description: 获取三级分类数据
+     * @Param:
+     * @return:
+     * @Author: jq
+     */
 
     @ApiOperation(value = "获取三级分类数据")
     @GetMapping("/getCategory3/{category2Id}")
@@ -71,18 +73,18 @@ public class BaseCategroyApiController {
         List<BaseCategory3> category3List = managerCategroyService.getCategory3(category2Id);
         return Result.ok(category3List);
     }
-    /**
-    * @Description: 根据分类id获取平台属性集合
-    * @Param: 
-    * @return: 
-    * @Author: jq
-    */
 
+    /**
+     * @Description: 根据分类id获取平台属性集合
+     * @Param:
+     * @return:
+     * @Author: jq
+     */
     @ApiOperation(value = "根据分类id获取平台属性集合")
-    @GetMapping("/admin/product/attrInfoList/{category1Id}/{category2Id}/{category3Id}")
-    public Result<List<BaseAttrInfo>> attrInfoList(@PathVariable Long category1Id,
-                                                   @PathVariable Long category2Id,
-                                                   @PathVariable Long category3Id) {
+    @GetMapping("/attrInfoList/{category1Id}/{category2Id}/{category3Id}")
+    public Result<List<BaseAttrInfo>> attrInfoList(@PathVariable(required = false) Long category1Id,
+                                                   @PathVariable(required = false) Long category2Id,
+                                                   @PathVariable(required = false) Long category3Id) {
         List<BaseAttrInfo> baseAttrInfoList = baseAttrInfoService.getBaseAttrInfoList(category1Id, category2Id, category3Id);
         return Result.ok(baseAttrInfoList);
     }
