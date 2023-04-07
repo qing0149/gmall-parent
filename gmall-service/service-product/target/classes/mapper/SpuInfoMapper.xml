@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.product.mapper.SpuInfoMapper">
+    <resultMap id="spuInfo" type="com.atguigu.gmall.model.product.SpuInfo" autoMapping="true">
+        <id property="id" column="siId"></id>
+        <collection property="spuImageList" ofType="com.atguigu.gmall.model.product.SpuImage"
+                    autoMapping="true">
+            <id property="id" column="simId"></id>
+            <result property="imgUrl" column="iimg_url"></result>
+            <result property="imgName" column="iimg_name"></result>
+        </collection>
+        <collection property="spuPosterList" ofType="com.atguigu.gmall.model.product.SpuPoster"
+                    autoMapping="true">
+            <id property="id" column="spid"></id>
+            <result property="imgName" column="pimg_name"></result>
+            <result property="imgUrl" column="pimgurl"></result>
+        </collection>
+        <collection property="spuSaleAttrList" ofType="com.atguigu.gmall.model.product.SpuSaleAttr" autoMapping="true">
+            <id property="id" column="ssaid"></id>
+            <collection property="spuSaleAttrValueList" ofType="com.atguigu.gmall.model.product.SpuSaleAttrValue"
+                        autoMapping="true">
+                <id property="id" column="ssav_id"></id>
+            </collection>
+        </collection>
+    </resultMap>
+    <select id="selectAllById" resultMap="spuInfo">
+        select infoId.id   siId,
+               infoId.spu_name,
+               infoId.category3_id,
+               infoId.tm_id,
+               infoId.description,
+
+               si.id       simId,
+               infoId.id   spu_id,
+               si.img_name iimg_name,
+               si.img_url  iimg_url,
+
+               sp.id       spid,
+               sp.img_name pimg_name,
+               sp.img_url  pimgurl,
+
+               ssa.id      ssaid,
+               ssa.base_sale_attr_id,
+               ssa.sale_attr_name,
+
+               ssav.id     ssav_id,
+               ssav.sale_attr_value_name,
+               ssav.sale_attr_name
+        from spu_info infoId
+                 left join spu_image si on infoId.id = si.spu_id
+                 left join spu_poster sp on infoId.id = sp.spu_id
+                 left join spu_sale_attr ssa on infoId.id = ssa.spu_id
+                 left join spu_sale_attr_value ssav on infoId.id=ssav.spu_id and ssa.base_sale_attr_id = ssav.base_sale_attr_id
+        where infoId.id = #{id}
+    </select>
+</mapper>

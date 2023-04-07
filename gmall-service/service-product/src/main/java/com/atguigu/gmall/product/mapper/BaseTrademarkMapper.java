@@ -4,6 +4,8 @@ import com.atguigu.gmall.model.product.BaseTrademark;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @ClassName BaseTrademarkMapper
  * @Description TODO
@@ -14,4 +16,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BaseTrademarkMapper extends BaseMapper<BaseTrademark> {
 
+//    List<BaseTrademark> selectByCategory3Id(Long category3Id);
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.gmall.product.mapper.BaseTrademarkMapper">
+
+<!--    <select id="selectByCategory3Id" resultType="com.atguigu.gmall.model.product.BaseTrademark">-->
+<!--        SELECT bt.id id, bt.tm_name tmName, bt.logo_url logoUrl-->
+<!--        FROM base_trademark bt-->
+<!--                 LEFT JOIN base_category_trademark bct-->
+<!--                           ON bct.trademark_id = bt.id AND bct.category3_id = #{category3_id}-->
+<!--        WHERE bct.id IS NULL-->
+<!--           or (bct.category3_id = #{category3_id} and bct.is_deleted = 1);-->
+<!--    </select>-->
+</mapper>

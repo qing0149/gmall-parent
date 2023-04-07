@@ -26,7 +26,7 @@ public class SpuInfo extends BaseEntity {
 	@TableField("spu_name")
 	private String spuName;
 
-	@ApiModelProperty(value = "商品描述(后台简述）")
+	@ApiModelProperty(value = "商品描述(后台简述)")
 	@TableField("description")
 	private String description;
 

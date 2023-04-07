@@ -52,7 +52,6 @@ public class BaseCategroyApiController {
      * @return:
      * @Author: jq
      */
-
     @ApiOperation(value = "获取二级分类数据")
     @GetMapping("getCategory2/{category1Id}")
     public Result<List<BaseCategory2>> getCategory2(@PathVariable Long category1Id) {
@@ -66,7 +65,6 @@ public class BaseCategroyApiController {
      * @return:
      * @Author: jq
      */
-
     @ApiOperation(value = "获取三级分类数据")
     @GetMapping("/getCategory3/{category2Id}")
     public Result<List<BaseCategory3>> getCategory3(@PathVariable Long category2Id) {
@@ -88,4 +86,6 @@ public class BaseCategroyApiController {
         List<BaseAttrInfo> baseAttrInfoList = baseAttrInfoService.getBaseAttrInfoList(category1Id, category2Id, category3Id);
         return Result.ok(baseAttrInfoList);
     }
+
+
 }

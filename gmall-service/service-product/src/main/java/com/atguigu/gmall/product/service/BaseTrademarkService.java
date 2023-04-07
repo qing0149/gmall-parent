@@ -4,6 +4,8 @@ import com.atguigu.gmall.model.product.BaseTrademark;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * @ClassName BaseTrademarkService
  * @Description TODO
@@ -17,4 +19,6 @@ public interface BaseTrademarkService  extends IService<BaseTrademark> {
     BaseTrademark getById(Long id);
 
     void removeById(Long id);
+
+    List<BaseTrademark> selectByCategory3Id(Long category3Id);
 }

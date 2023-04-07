@@ -18,34 +18,39 @@ import java.util.List;
  **/
 @Api(tags = "品牌列表")
 @RestController
-@RequestMapping("/admin/product")
+@RequestMapping("/admin/product/baseTrademark")
 public class BaseTrademarkController {
     @Autowired
     private BaseTrademarkService baseTrademarkService;
 
-    @GetMapping("/baseTrademark/{page}/{limit}")
+    @GetMapping("/{page}/{limit}")
     public Result<Page> getBaseTrademarkPage(@PathVariable(value = "page") Long page, @PathVariable(value = "limit") Long limit) {
         Page<BaseTrademark> pageParam = new Page<>(page, limit);
         pageParam = baseTrademarkService.getBaseTrademarkPage(pageParam);
         return Result.ok(pageParam);
     }
 
-    @GetMapping("baseTrademark/get/{id}")
+    @GetMapping("/get/{id}")
     public Result getbaseTrademark(@PathVariable Long id) {
         BaseTrademark baseTrademark = baseTrademarkService.getById(id);
         return Result.ok(baseTrademark);
     }
 
-    @DeleteMapping("baseTrademark/remove/{id}")
+    @DeleteMapping("/remove/{id}")
     public Result removebaseTrademark(@PathVariable Long id) {
         baseTrademarkService.removeById(id);
         return Result.ok();
     }
 
-    @PostMapping("baseTrademark/save")
+    @PostMapping("/save")
     public Result savebaseTrademark(@RequestBody BaseTrademark baseTrademark) {
         boolean save = baseTrademarkService.save(baseTrademark);
         return save ? Result.ok() : Result.fail();
+    }
+    @PutMapping("/update")
+    public Result updateTrademark(@RequestBody BaseTrademark baseTrademark){
+        boolean update = baseTrademarkService.updateById(baseTrademark);
+        return update?Result.ok():Result.fail();
     }
 
 }

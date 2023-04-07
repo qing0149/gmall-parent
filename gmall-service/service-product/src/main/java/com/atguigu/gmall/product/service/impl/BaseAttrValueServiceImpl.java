@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import javax.jws.Oneway;
@@ -32,6 +33,7 @@ public class BaseAttrValueServiceImpl extends ServiceImpl<BaseAttrValueMapper, B
     private BaseAttrInfoService baseAttrInfoService;
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public Boolean saveAttrInfo(BaseAttrInfo baseAttrInfo) {
         boolean flag = false;
         ArrayList<BaseAttrInfo> baseAttrInfos = new ArrayList<>();

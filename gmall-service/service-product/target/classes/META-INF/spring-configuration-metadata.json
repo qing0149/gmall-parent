@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "minio",
+      "type": "com.atguigu.gmall.product.utils.MinioUtil",
+      "sourceType": "com.atguigu.gmall.product.utils.MinioUtil"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
