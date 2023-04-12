@@ -37,31 +37,31 @@ public class BaseAttrValueServiceImpl extends ServiceImpl<BaseAttrValueMapper, B
     public Boolean saveAttrInfo(BaseAttrInfo baseAttrInfo) {
         boolean flag = false;
         ArrayList<BaseAttrInfo> baseAttrInfos = new ArrayList<>();
+        //修改
         if (baseAttrInfo.getId() != null) {
             if (!CollectionUtils.isEmpty(baseAttrInfo.getAttrValueList())) {
                 LambdaQueryWrapper<BaseAttrValue> queryWrapper = new LambdaQueryWrapper<>();
                 queryWrapper.eq(BaseAttrValue::getAttrId, baseAttrInfo.getId());
                 baseAttrValueService.remove(queryWrapper);
                 List<BaseAttrValue> attrValueList = baseAttrInfo.getAttrValueList();
-                attrValueList.stream().forEach(baseAttrValue -> {
-                    baseAttrValue.setAttrId(baseAttrInfo.getId());
-                });
+                attrValueList.stream().forEach(baseAttrValue -> baseAttrValue.setAttrId(baseAttrInfo.getId()));
                 flag = baseAttrValueService.saveBatch(attrValueList);
             }
         } else {
-            List<BaseAttrValue> attrValueList = baseAttrInfo.getAttrValueList();
-            attrValueList.stream().forEach(baseAttrValue -> {
-                baseAttrValue.setAttrId(baseAttrInfo.getCategoryId());
-            });
-            flag = baseAttrValueService.saveBatch(attrValueList);
-            List<String> attr_name = attrValueList.stream().map(BaseAttrValue::getValueName).collect(Collectors.toList());
-            attr_name.stream().forEach(a -> {
-                BaseAttrInfo attrInfo = new BaseAttrInfo();
-                BeanUtils.copyProperties(baseAttrInfo, attrInfo);
-                attrInfo.setAttrName(a);
-                baseAttrInfos.add(attrInfo);
-            });
-            baseAttrInfoService.saveBatch(baseAttrInfos);
+
+            baseAttrInfoService.save(baseAttrInfo);
+            if (!CollectionUtils.isEmpty(baseAttrInfo.getAttrValueList())) {
+                List<BaseAttrValue> attrValueList = baseAttrInfo.getAttrValueList();
+                attrValueList.stream().forEach(baseAttrValue -> baseAttrValue.setAttrId(baseAttrInfo.getId()));
+                List<String> name = attrValueList.stream().map(BaseAttrValue::getValueName).collect(Collectors.toList());
+                name.stream().forEach(a -> {
+                    BaseAttrInfo attrInfo = new BaseAttrInfo();
+                    BeanUtils.copyProperties(baseAttrInfo, attrInfo);
+                    attrInfo.setAttrName(a);
+                    baseAttrInfos.add(attrInfo);
+                });
+                flag = baseAttrValueService.saveBatch(attrValueList);
+            }
         }
         return flag;
     }

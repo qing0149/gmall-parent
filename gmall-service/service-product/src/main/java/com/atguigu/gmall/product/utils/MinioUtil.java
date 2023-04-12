@@ -1,20 +1,16 @@
 package com.atguigu.gmall.product.utils;// 直接赋值粘贴，删除CSDN的权限转载中文
 
 import cn.hutool.core.date.DateUtil;
-import com.atguigu.gmall.common.execption.GmallException;
-import com.atguigu.gmall.common.result.Result;
+import com.atguigu.gmall.execption.GmallException;
 import io.minio.BucketExistsArgs;
 import io.minio.MakeBucketArgs;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;
 import io.minio.errors.*;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

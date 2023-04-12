@@ -17,4 +17,7 @@ public interface SpuManageService {
     void saveSpuInfo(SpuInfo spuInfo);
 
     SpuInfo getSpuInfoById(Long id);
+
+    void updateSpuInfo(SpuInfo spuInfo);
+
 }

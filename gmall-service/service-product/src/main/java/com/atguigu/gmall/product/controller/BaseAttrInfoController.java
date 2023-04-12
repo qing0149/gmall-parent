@@ -1,11 +1,10 @@
 package com.atguigu.gmall.product.controller;// 直接赋值粘贴，删除CSDN的权限转载中文
 
-import com.atguigu.gmall.common.result.Result;
+import com.atguigu.gmall.result.Result;
 import com.atguigu.gmall.model.product.BaseAttrInfo;
 import com.atguigu.gmall.model.product.BaseAttrValue;
 import com.atguigu.gmall.product.service.BaseAttrValueService;
 import io.swagger.annotations.Api;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

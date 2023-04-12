@@ -29,20 +29,16 @@
                infoId.category3_id,
                infoId.tm_id,
                infoId.description,
-
                si.id       simId,
                infoId.id   spu_id,
                si.img_name iimg_name,
                si.img_url  iimg_url,
-
                sp.id       spid,
                sp.img_name pimg_name,
                sp.img_url  pimgurl,
-
                ssa.id      ssaid,
                ssa.base_sale_attr_id,
                ssa.sale_attr_name,
-
                ssav.id     ssav_id,
                ssav.sale_attr_value_name,
                ssav.sale_attr_name
@@ -50,7 +46,14 @@
                  left join spu_image si on infoId.id = si.spu_id
                  left join spu_poster sp on infoId.id = sp.spu_id
                  left join spu_sale_attr ssa on infoId.id = ssa.spu_id
-                 left join spu_sale_attr_value ssav on infoId.id=ssav.spu_id and ssa.base_sale_attr_id = ssav.base_sale_attr_id
+                 left join spu_sale_attr_value ssav
+                           on infoId.id = ssav.spu_id and ssa.base_sale_attr_id = ssav.base_sale_attr_id
         where infoId.id = #{id}
+          and infoId.is_deleted = 0
+          and si.is_deleted = 0
+          and sp.is_deleted = 0
+          and ssa.is_deleted = 0
+          and ssav.is_deleted = 0;
     </select>
+
 </mapper>

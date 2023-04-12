@@ -4,6 +4,7 @@ import com.atguigu.gmall.model.product.BaseSaleAttr;
 import com.atguigu.gmall.model.product.SpuSaleAttr;
 import com.atguigu.gmall.model.product.SpuSaleAttrValue;
 import com.atguigu.gmall.product.mapper.SpuSaleAttrMapper;
+import com.atguigu.gmall.product.mapper.SpuSaleAttrValueMapper;
 import com.atguigu.gmall.product.service.BaseSaleAttrService;
 import com.atguigu.gmall.product.service.SpuSaleAttrService;
 import com.atguigu.gmall.product.service.SpuSaleAttrValueService;
@@ -28,6 +29,8 @@ public class SpuSaleAttrServiceImpl extends ServiceImpl<SpuSaleAttrMapper, SpuSa
     private SpuSaleAttrValueService spuSaleAttrValueService;
     @Autowired
     private BaseSaleAttrService baseSaleAttrService;
+    @Autowired
+    private SpuSaleAttrService spuSaleAttrService;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -50,5 +53,11 @@ public class SpuSaleAttrServiceImpl extends ServiceImpl<SpuSaleAttrMapper, SpuSa
         spuSaleAttrValueList.stream().forEach(spuSaleAttrValues -> spuSaleAttrValueService.saveBatch(spuSaleAttrValues));
         //todo: 保存base_sale_attr
 //        baseSaleAttrService.saveBatch(baseSaleAttrList);
+    }
+    @Autowired
+    private SpuSaleAttrMapper spuSaleAttrMapper;
+    @Override
+    public List<SpuSaleAttr> getSpuSaleAttrList(Long spuId) {
+        return spuSaleAttrMapper.selectSpuSaleAttrList(spuId);
     }
 }

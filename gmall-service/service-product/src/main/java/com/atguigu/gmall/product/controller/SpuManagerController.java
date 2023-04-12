@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.controller;// 直接赋值粘贴，删除CSDN的权限转载中文
 
-import com.atguigu.gmall.common.result.Result;
+import com.atguigu.gmall.result.Result;
 import com.atguigu.gmall.model.product.SpuImage;
 import com.atguigu.gmall.model.product.SpuInfo;
 import com.atguigu.gmall.product.service.SpuImageService;
@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @program: gmall-parent
- * @description:
+ * @description: 商品品牌
  * @author: jq
  * @create: 2023-04-06 19:22
  **/
@@ -52,4 +52,11 @@ public class SpuManagerController {
         List<SpuImage> spuImageList = spuImageService.getSpuImageListBy(id);
         return Result.ok(spuImageList);
     }
+//    修改spk
+    @PostMapping("/updateSpuInfo")
+    public Result updateSpuInfo(@RequestBody SpuInfo spuInfo){
+        spuManageService.updateSpuInfo(spuInfo);
+        return Result.ok();
+    }
+
 }

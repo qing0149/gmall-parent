@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/gmall-client/service-item-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-client/service-product-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-common/common-util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-common/service-util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-gateway/service-product-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-service/service-item/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-service/service-product/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gmall-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gmall-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-util/src/main/java" charset="UTF-8" />
     <file url="file://D:/develop/maven/gmall/org/springframework/boot/spring-boot-starter-parent/2.3.6.RELEASE/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -1,8 +1,6 @@
 package com.atguigu.gmall.product.service.impl;
 
-import com.atguigu.gmall.common.execption.GmallException;
 import com.atguigu.gmall.model.product.BaseAttrInfo;
-import com.atguigu.gmall.model.product.BaseAttrValue;
 import com.atguigu.gmall.product.mapper.BaseAttrInfoMapper;
 import com.atguigu.gmall.product.service.BaseAttrInfoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

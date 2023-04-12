@@ -1,13 +1,10 @@
 package com.atguigu.gmall.product.controller;// 直接赋值粘贴，删除CSDN的权限转载中文
 
-import com.atguigu.gmall.common.result.Result;
-import com.atguigu.gmall.model.product.BaseCategoryTrademark;
+import com.atguigu.gmall.result.Result;
 import com.atguigu.gmall.model.product.BaseTrademark;
 import com.atguigu.gmall.model.product.CategoryTrademarkVo;
 import com.atguigu.gmall.product.service.BaseCategoryTrademarkService;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.swagger.annotations.Api;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

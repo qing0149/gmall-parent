@@ -1,0 +1,7 @@
+com\atguigu\gmall\config\RedissonConfig.class
+com\atguigu\gmall\config\Knife4jConfig.class
+com\atguigu\gmall\config\RedisConfig.class
+com\atguigu\gmall\config\Swagger2Config.class
+com\atguigu\gmall\config\MybatisPlusConfig.class
+com\atguigu\gmall\constant\RedisConst.class
+com\atguigu\gmall\handler\GlobalExceptionHandler.class
